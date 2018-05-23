@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">AndroidFirstAPP</string>
+    <string name="clickButton">Suma</string>
+    <string name="resetButton">Wyczyść</string>
+    <string name="firstNumber">Podaj pierwszą liczbe</string>
+    <string name="secondNumber">Podaj drugą liczbe</string>
+    <string name="rozButton">Różnica</string>
+    <string name="mnozButton">Mnożenie</string>
+    <string name="dzielButton">Dzielenie</string>
+</resources>
