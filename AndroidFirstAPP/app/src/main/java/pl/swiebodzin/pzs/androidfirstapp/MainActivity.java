@@ -89,13 +89,13 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
+//todo napisac sprawdzanie w domu czy pola number 1 i number2 sa puste
     }
     public int getSum(int number1, int number2){
 
         return number1+number2;
     }
-    //TODO POMAGA ZARZADZAC METODAMI
+
     public int getRoz(int number1, int number2){
 
         return number1-number2;
