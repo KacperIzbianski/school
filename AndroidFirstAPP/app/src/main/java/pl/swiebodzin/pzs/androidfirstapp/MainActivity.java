@@ -2,6 +2,7 @@ package pl.swiebodzin.pzs.androidfirstapp;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     EditText firstNumber;
     EditText secondNumber;
 
-    int a, b, sum;
+    int a, b, sum,c,d;
     TextView textSum;
     Button clearButton;
     Button sumButton;
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         sumButton.setOnClickListener(new View.OnClickListener() { //metody umozliwiajace klikniecie przycisku z efektem ktory trzba zaprogramować
             @Override
             public void onClick(View v) {
+                Log.d("life", "onCreate");
                 // Integer zawiera opcje zamiany liczba na ciąg znakow  (np. parseInt)
                 //toString zamienia na string
                 if((firstNumber == null) || (secondNumber == null)) {
@@ -64,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
         rozButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+
                 if((firstNumber == null) || (secondNumber == null)) {
                     textSum.setText("Wprowadz obie liczby");
                 }
@@ -96,15 +99,19 @@ public class MainActivity extends AppCompatActivity {
         dzielButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                if((firstNumber.getText().toString().length() == 0) || (secondNumber.getText().toString().length() == 0)) {
-                    textSum.setText("Jełopie nigdy nie dziel przez ZERO");
+                c = Integer.parseInt(firstNumber.getText().toString());
+                d = Integer.parseInt(secondNumber.getText().toString());
+                if ((firstNumber == null) || (secondNumber == null)) {
+                    textSum.setText("Wprowadz obie liczby");
                 }
                 else {
 
 
-                    if ((firstNumber == null) || (secondNumber == null)) {
-                        textSum.setText("Wprowadz obie liczby");
-                    } else {
+
+                    if((c == 0) || (d == 0)) {
+                        textSum.setText("Jełopie nigdy nie dziel przez ZERO");
+                    }
+                    else {
 
 
                         a = Integer.parseInt(firstNumber.getText().toString());
