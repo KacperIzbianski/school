@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     Button mnozButton;
     Button dzielButton;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,20 +36,27 @@ public class MainActivity extends AppCompatActivity {
         rozButton = findViewById(R.id.rozButton);
         mnozButton = findViewById(R.id.mnozButton);
         dzielButton = findViewById(R.id.dzielButton);
+
         sumButton.setOnClickListener(new View.OnClickListener() { //metody umozliwiajace klikniecie przycisku z efektem ktory trzba zaprogramować
             @Override
             public void onClick(View v) {
                 // Integer zawiera opcje zamiany liczba na ciąg znakow  (np. parseInt)
                 //toString zamienia na string
-                a = Integer.parseInt(firstNumber.getText().toString());
-                //to samo co wyzej ale w dwóch linijkach
-               // String firstNumberString = firstNumber.getText().toString();
-               // a = Integer.parseInt(firstNumberString);
-                b = Integer.parseInt(secondNumber.getText().toString());
+                if((firstNumber == null) || (secondNumber == null)) {
+                    textSum.setText("Wprowadz obie liczby");
+                }
+                else {
 
-                sum = getSum(a,b);
-                textSum.setText(String.valueOf(sum)); //wyswietlenie wyniku zamienionego ze stringa na liczbe
 
+                    a = Integer.parseInt(firstNumber.getText().toString());
+                    //to samo co wyzej ale w dwóch linijkach
+                    // String firstNumberString = firstNumber.getText().toString();
+                    // a = Integer.parseInt(firstNumberString);
+                    b = Integer.parseInt(secondNumber.getText().toString());
+
+                    sum = getSum(a, b);
+                    textSum.setText(String.valueOf(sum)); //wyswietlenie wyniku zamienionego ze stringa na liczbe
+                }
 
 
             }
@@ -55,38 +64,68 @@ public class MainActivity extends AppCompatActivity {
         rozButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-               a = Integer.parseInt(firstNumber.getText().toString());
-               b = Integer.parseInt(secondNumber.getText().toString());
-               sum = getRoz(a,b);
-               textSum.setText(String.valueOf(sum));
+                if((firstNumber == null) || (secondNumber == null)) {
+                    textSum.setText("Wprowadz obie liczby");
+                }
+                else {
+
+
+                    a = Integer.parseInt(firstNumber.getText().toString());
+                    b = Integer.parseInt(secondNumber.getText().toString());
+                    sum = getRoz(a, b);
+                    textSum.setText(String.valueOf(sum));
+                }
             }
         });
         mnozButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                a = Integer.parseInt(firstNumber.getText().toString());
-                b = Integer.parseInt(secondNumber.getText().toString());
-                sum = getMnoz(a,b);
-                textSum.setText(String.valueOf(sum));
+                if((firstNumber == null) || (secondNumber == null)) {
+                    textSum.setText("Wprowadz obie liczby");
+                }
+                else {
+
+
+                    a = Integer.parseInt(firstNumber.getText().toString());
+                    b = Integer.parseInt(secondNumber.getText().toString());
+                    sum = getMnoz(a, b);
+                    textSum.setText(String.valueOf(sum));
+                }
             }
         });
         dzielButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                a = Integer.parseInt(firstNumber.getText().toString());
-                b = Integer.parseInt(secondNumber.getText().toString());
-                sum = getDziel(a,b);
-                textSum.setText(String.valueOf(sum));
+                if((firstNumber.getText().toString().length() == 0) || (secondNumber.getText().toString().length() == 0)) {
+                    textSum.setText("Jełopie nigdy nie dziel przez ZERO");
+                }
+                else {
+
+
+                    if ((firstNumber == null) || (secondNumber == null)) {
+                        textSum.setText("Wprowadz obie liczby");
+                    } else {
+
+
+                        a = Integer.parseInt(firstNumber.getText().toString());
+                        b = Integer.parseInt(secondNumber.getText().toString());
+                        sum = getDziel(a, b);
+                        textSum.setText(String.valueOf(sum));
+                    }
+                }
             }
         });
         clearButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                if((firstNumber == null) || (secondNumber == null)){
 
-                firstNumber.setText(" ");
-                secondNumber.setText(" ");
-                textSum.setText(" ");
-
+                }
+                else {
+                    firstNumber.setText(" ");
+                    secondNumber.setText(" ");
+                    textSum.setText(" ");
+                }
             }
         });
 //todo napisac sprawdzanie w domu czy pola number 1 i number2 sa puste
