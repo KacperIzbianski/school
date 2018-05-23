@@ -6,5 +6,5 @@
     <string name="secondNumber">Podaj drugą liczbe</string>
     <string name="rozButton">Różnica</string>
     <string name="mnozButton">Mnożenie</string>
-    <string name="dzielButton">Dzielenie</string>
+    <string name="dzielButton">Dziel</string>
 </resources>
